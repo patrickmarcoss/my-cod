@@ -1,40 +1,36 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
-
-int main(){system("color 7c");
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main(){
 FILE *arq;
 int i=0;
 char nome[30];
 char matricula[10];
-arq= fopen("C:\\Users\\dinib\\Desktop\\atividades\\ativi7\\texto.txt", "w");
-if (arq == NULL)
-{	
-    fprintf(stderr, "Erro ao abrir o aluno.txt!");	return 1; 
+arq= fopen("texto2.txt", "w");
+if (arq == NULL)  
+  {
+     printf("Problemas na abertura do arquivo\n");
+     return 0;
 }
-else
-   {
-     puts("O arquivo foi aberto!\n");
-   }   
 
-puts("Escreva sua matricula:");
+printf("matricula\n ");
 memset(matricula, '\0', sizeof(matricula));
 scanf("%s",matricula);
 
 while (strcmp("0", matricula)){
     fputs(matricula, arq);
 
-    puts("Escreva seu nome:");
+    printf("nome\n ");
     memset(nome, '\0', sizeof(nome));
     scanf("%s",nome);
     fputs(nome, arq);
 
-    puts("Escreva sua matricula:");
+    printf("matricula\n ");
     memset(matricula, '\0', sizeof(matricula));
     scanf("%s",matricula);   
 }
 fclose(arq);
-arq=fopen("C:\\Users\\dinib\\Desktop\\atividades\\ativi7\\texto.txt","r");
+arq=fopen("texto2.txt","r");
 while(fgets(matricula,10,arq)!=NULL){
     printf("%s", matricula); 
 }
