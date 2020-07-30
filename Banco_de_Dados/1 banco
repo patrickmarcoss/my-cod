@@ -1,0 +1,79 @@
+
+SCRIPT DE CRIAÇÃO:
+
+1) CRIANDO TABELA CLIENTE:
+
+CREATE TABLE CLIENTE
+(
+Nome varchar2 (50) ,
+CPF varchar2 (14),
+Idade number (2)
+)
+a)	Adicionando a chave primária:  ALTER TABLE CLIENTE ADD CONSTRAINT PK_CPF  primary key (CPF)
+
+2) Criando tabela EDITORA:
+
+CREATE TABLE EDITORA 
+(
+Cod_Editora number(10),
+Nome varchar2(40),
+ISBN_livro number (10)
+);
+A)	Adicionando chave primária: ALTER TABLE EDITORA ADD CONSTRAINT PK_EDITORA primary key (Cod_Editora)
+
+
+
+
+3) Criando tabela PEDIDO
+
+CREATE TABLE PEDIDO 
+(
+CPF_cliente varchar2 (14),
+num_pedido number (5) primary key not null,
+valor number (5,2)
+)
+
+A)	Adicionando chave primária: ALTER TABLE PEDIDO ADD CONSTRAINT PK_Numero primary key (num_pedido)
+
+b)	Adicionando Chave Estrangeria: ALTER TABLE PEDIDO ADD CONSTRAINT fk_cpf foreign key (CPF_cliente) references CLIENTE (CPF)
+
+
+4) Criando tabela AUTOR:
+
+CREATE TABLE AUTOR 
+( 
+Matricula number (10) ,
+Nome varchar2 (30) not null, 
+email varchar2 (30) not null 
+);
+	
+a)	Adicionando chave primária: ALTER TABLE AUTOR ADD CONSTRAINT PK_autor primary key (Matricula)
+
+
+5) Criando tabela LIVRO:
+
+CREATE TABLE LIVRO 
+(
+ISBN number (14) primary key not null,
+nome_livro number (5),
+codigo_autor number (10),      
+codigo_editora number (10
+codigo_estoque number(10), 
+numero_pedido number(10)       
+)
+
+
+
+
+a)	Adicionando chave primária: ALTER TABLE LIVRO ADD CONSTRAINT PK_ISBN  primary key (ISBN)
+
+
+b)	Adicionando as Chaves Estrangeiras:   
+ALTER TABLE LIVRO ADD CONSTRAINT fk_autor foreign key (codigo_autor) references AUTOR (Matricula)
+
+ALTER TABLE LIVRO ADD CONSTRAINT fk_editora foreign key (codigo_editora) references EDITORA (Cod_Editora)
+
+ALTER TABLE LIVRO ADD CONSTRAINT fk_deposito foreign key (codigo_estoque) references DEPOSITO (Numero_deposito) 
+
+ALTER TABLE LIVRO ADD CONSTRAINT fk_pedido foreign key (numero_pedido) references PEDIDO (num_pedido)  
+
