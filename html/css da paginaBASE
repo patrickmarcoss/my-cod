@@ -1,0 +1,116 @@
+body {
+    background-color:#bcbccd;
+    margin: 0;
+}
+
+header {
+    background-image: linear-gradient(to bottom, #0843f3 0%,#22fb00 50%,#070707 51%,#04c0ff 100%);
+    display: table;
+    width: 100%;
+}
+/*assim comenta euhasuhe*/
+.logo {
+    /*margin-top: 300px;
+    margin-left: 100px;*/
+    margin: 30px 20px 20px 80px;
+         /* top rigth bottom left */
+    float: left;
+    width: 60px;
+    height: 60px;
+}
+
+/*.texto {
+    float: left;
+    width: 100%;
+    line-height: 15px;
+}*/
+
+.menu {
+    text-align: center;
+    background-image: linear-gradient(to bottom, #ffdf8d 0%,#ff0a0a 50%,#ffe293 51%,#b5912c 100%);
+}
+
+.menu ul {
+    /*ul trabalha com marcadores*/
+    margin: 0;
+}
+
+.menu li {
+    display: inline-block;
+    padding: 6px 80px;
+}
+.menu li:hover {
+    font-weight: bold;/*colocar em negrito as opcoes selecionadas*/
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+section{
+    margin: auto;
+    width: 80%;
+    background-color: rgba(255, 7, 7, 0.84);
+}
+
+.img_padrao {
+    /* top rigth botton left */
+    margin: 10px 0 20px 0;
+    border-radius: 8px;
+    width: 95%;
+    height: 250px;
+}
+.coluna {
+    float: left;
+    width: 33.33%;
+}
+
+.linha::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.logo-parc {
+    margin: 10px;
+    width: 200px;
+    height: 55px;
+}
+
+.logo-cont {
+    margin-top: 10px;
+    width: 30px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+   }
+
+p {
+    text-align: justify;/*aumenta tamanho da letra*/
+    font-size: 18px;
+    margin: 0;
+    font-family: monospace;
+}
+
+h1 {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+footer a:hover {
+    font-weight: bold;
+}
+
+footer a {
+    color: rgb(51, 0, 255);
+}
