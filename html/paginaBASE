@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon"> <!--aqui colcoa icone na aba-->
+    <link rel="stylesheet" href="css/style.css"><!--aqui é para chamar o CSS-->
+    <title>PaginaTESTE</title><!--aqui coloca o nome da pagina/aba-->
+
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="Logo" class="logo">
+        <h1 style="color: red;">PaginaTESTE</h1>
+        <p>
+            Oferecemos o desenvolvimento dos melhores
+            sites e apps para sua empresa.
+        </p><!--H2 FICA NEGRITO apenas o p fica normal-->
+    </header>
+
+    <DIV class="menu">
+        <nav><!--SERVE PARA CRIAR MENU-->
+            <ul>
+                <li><a href="#servicos">SERVIÇOS</a></li><!--serve para ir para serviços mais rapido-->
+                <li><a href="#clientes">CLIENTES</a></li>
+                <li><a href="#time">TIME</a></li><!--serve para ir mais rapido para "time"-->
+                <li><a href="#parceiros">PARCEIROS</a></li>
+                <li><a href="#contato">CONTATO</a></li><!--na pagina dará para clicar-->
+            </ul>
+        </nav>
+    </DIV>
+    
+   <!-- <h1>GOOD d+</h1>-->
+    <!--<h2>GOOD d+</h2> assim é para diminuir tamanho-->
+    <!--<h3>GOOD d+</h3> assim é para comentar-->
+    <h3>SERVIÇOS</h3>
+
+<p>AQUI TEM DESENVOLVIMENTO DOS MELHORES 
+    SITES PRA E APPS  PARA SUA EMPRESA, 
+    AQUI TEM DESENVOLVIMENTO DOS MELHORES 
+    SITES PRA E APPS PARA SUA EMPRESA,
+    AQUI TEM DESENVOLVIMENTO DOS MELHORES 
+    SITES PRA E APPS  PARA SUA EMPRESA,
+    AQUI TEM DESENVOLVIMENTO DOS MELHORES 
+    SITES PRA E APPS PARA SUA EMPRESA.
+</p>
+    
+    <section id="servicos"> <!--USANDO ID NO LUGAR DE CLASS PERMITE NAO REPETIR NOMES, MAS CLASS PERMITE-->
+       <h2>SERVIÇOS</h2> 
+       <P>OFERECEMOS O DESENVOLVIMENTO DOS MELHORES SITES
+           E APPS PARA SUA EMPRESA
+           OFERECEMOS O DESENVOLVIMENTO DOS MELHORES SITES
+           E APPS PARA SUA EMPRESA
+           OFERECEMOS O DESENVOLVIMENTO DOS MELHORES SITES
+           E APPS PARA SUA EMPRESA
+           OFERECEMOS O DESENVOLVIMENTO DOS MELHORES SITES
+           E APPS PARA SUA EMPRESA
+       </P>
+        <div class="linha">
+            <div class="coluna">
+                <img src="/img/servico1.jpg" alt="Servoço" class="img_padrao">
+            </div>
+            <div class="coluna">
+                <img src="/img/servico2.jpg" alt="Servoço" class="img_padrao"> <!--serve para colocar imagem no site, precisa
+        ter a imagem baixada-->
+            </div>
+            <div class="coluna">
+                <img src="/img/servico3.jpg" alt="Servoço" class="img_padrao">
+            </div>
+        </div>       
+    </section>
+    <SECtion id="clientes">
+        <H2>CLIENTES</H2>
+        <P>Nossos clientes ficaram muito 
+            satisfeitos com o nosso serviço.
+        </P>
+        <div class="linha">
+            <div class="coluna">
+                <img src="/img/cliente1.jpg" alt="Cliente" class="img_padrao">
+            </div>
+
+            <div class="coluna">
+                <img src="/img/cliente2.jpg" alt="Cliente" class="img_padrao">
+            </div>
+
+            <div class="coluna">
+                <img src="/img/cliente3.jpg" alt="Cliente" class="img_padrao">
+            </div>
+        </div>    
+    </SECtion>
+
+    <SECtion id="time">
+        <h2>TIME</h2>
+        <P>
+            NOSSO TIME TRABALHA COM MUITA QUALIDADE E EMPENHO
+            PARA ENTREGAR MELHOR CONTEUDO PARA OS CLIENTES
+        </P>
+        <div class="linha">
+            <div class="coluna">
+                <IMG src="/img/time1.png" alt="Time" class="img_padrao">
+            </div>
+
+            <div class="coluna">
+                <IMG src="/img/time2.jpg" alt="Time" class="img_padrao">
+            </div>
+
+            <div class="coluna">
+                <<iframe width="95%" height="259px" src="https://www.youtube.com/embed/AdxhXQFMYV8?controls=0" frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- esse da linha 108 e 109 precisa pegar no youtube
+                precisa entrar no youtube no video desejado e clicar em compartilhar
+                depois clica em "incorporar" dai pega o codigo e copia aqui -->
+            </div>
+        </div>
+    </SECtion>
+
+    <SECtion id="parceiros">
+        <h2>PARCEIROS</h2>
+        <P>
+            nossos parceiros nos ajudam a ENTREGARmelhores soluçoes para nossos clientes.
+        </P>
+        <a href="https://www.ibm.com/br-pt" target="_blank"><IMG src="/img/parceiro1.png" alt="Parceiro" class="logo-parc" ></a>
+        <a href="https://www.microsoft.com/pt-br/" target="_blank"><IMG src="/img/parceiro2.png" alt="Parceiro" class="logo-parc" ></a>
+            <!--esses 2 de cima servem para colocar um direcionamento para uma
+            nova pagina ao clicar na imagem-->
+    </SECtion>
+
+    <SECtion id="contato">
+        <h2>CONTATO</h2>
+        <P>
+            entre em contato com nossa equipe.
+        </P>
+
+        <p>
+            <img src="/img/email.png" alt="Email" width="30px">
+            <a href="mailto:contato@empresa.com">contato@empresa.com</a><!--mailto é pra onde vai direcionar-->
+        </p>
+
+        <p>
+            <img src="/img/fone.png" alt="Telefone" width="30px">
+            <a href="tel:6199999999">(61)9999-9999</a><!--COLOCAR TELEFONE-->
+        </p>
+    </SECtion>
+<footer>
+    <p> Desenvolvido por <a href="https://www.instagram.com/wtf_edi/" target="_blank"> EDiSOUSA</a> salve tio!</p>
+    <!--linha de cima serve para lincar uma palavra a uma rede social que queira, para se apresentar-->
+    <p><a href="https://www.google.com.br/" target="_blank"><button>Ir para o Google</button></a></p>
+    <!--essa linha de cima é para criar botao e um link para o botao, apos clicado-->
+</footer>
+
+</body>
+</html>
