@@ -1,0 +1,134 @@
+#! /bin/bash
+clear
+
+# Definicao de variaveis
+data=`date +"%d/%m/%Y %T"`
+data_bkp=`date +"%d%m%Y%H%M%S"`
+diretorio_padrao=`pwd` ###estou usando o gitbash no windowns, testei no linux e deu certo
+diretorio_bkp="${diretorio_padrao}/diretorio_backup"
+
+
+backup ()
+{
+
+        if [ $# -ne 1 ]
+         then
+                echo "ERRO: Faltando informacao parametro"
+                echo "USAGE: backup <PARAMETRO>"
+                return
+         else
+                criterio_busca=${1}
+        fi
+
+        # Criando diretorio de backup se ele nao existir
+        if [ ! -d ${diretorio_bkp} ]
+        then
+                mkdir ${diretorio_bkp}
+                Return_Code=`${?}`
+
+                if [ ${Return_Code} -ne 0 ]
+                 then
+                        echo "ERRO: Diretorio nao foi criado"
+                        exit 1
+                fi
+        fi
+
+        Qtd_arqs=`ls ${diretorio_padrao} | grep "${criterio_busca}" | wc -l`
+
+        if [ ${Qtd_arqs} -eq 0 ]
+         then
+                echo "Nao ha arquivos para serem copiados"
+                Menu
+        fi
+
+        cont=0
+        for linha in `ls ${diretorio_padrao} | grep "${criterio_busca}"`
+        do
+                echo "`expr ${cont} + 1`) ${linha}"
+                Arq_bkp="${linha}.bkp_${data_bkp}"
+
+                cp -p ${linha} ${diretorio_bkp}/${Arq_bkp}
+
+                if [ ${?} -ne 0 ]
+                 then
+                        echo "ERRO: Arquivo ${linha} nao foi copiado"
+                        exit 0
+                fi
+
+                cont=`expr ${cont} + 1`
+        done
+
+        echo ""
+        echo "Foram copiados ${cont} arquiovs para o diretorio ${diretorio_bkp}"
+
+        Menu ###apos a variavel reiniciar, ira recomeçar o processo de execução/compilação...
+}
+
+
+Lista_Arq ()
+{
+
+        if [ $# -ne 1 ]
+         then
+                echo "ERRO: Faltando informacao parametro"
+                echo "USAGE: Lista_Arq <PARAMETRO>"
+                return
+         else
+                criterio_busca=${1}
+        fi
+
+        # Avaliando existencia do arquivo
+        if [ ! -f ${criterio_busca} ]
+        then
+                echo "ERRO: Arquivo nao existe"
+                return
+         else
+                head -5 ${criterio_busca} | while read linha
+                do
+                        echo ${linha}
+                        sleep 1
+                done
+        fi
+
+        Menu
+}
+
+### INICIO DO PROGRAMA!!!!!!-----------
+
+Menu(){
+        opcao=-1 ### -1 para reiniciar a variavel
+
+        while [ "${opcao}" != "0" -a "${opcao}" != "1" -a "${opcao}" != "2" ]
+        do
+                echo
+                echo "=-=-=- ESCOLHA UMA OPCAO =-=-=-"
+                echo "Opcao 1 - Realizar backup"
+                echo "Opcao 2 - Listar arquivo"
+                echo "Opcao 0 - exit/Sair"
+
+                echo
+                read -p "->" opcao
+        done
+
+        if [ ${opcao} -eq 1 ]
+         then
+                echo
+                read -p "Escreva o nome da mascara do DSNAME: " nome_arq
+                backup "${nome_arq}"
+        fi
+
+        if [ ${opcao} -eq 2 ]
+         then
+                echo
+                read -p "Escreva o nome do Arquivo: " nome_arq
+                Lista_Arq "${nome_arq}"
+        fi
+        if [ ${opcao} -eq 0 ]
+         then
+                echo
+                echo "Saindo do programa agora"
+                echo "Ate outra hora/dia"
+                exit 0
+        fi
+}
+Menu ###chamando a funcao
