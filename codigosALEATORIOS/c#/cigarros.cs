@@ -17,7 +17,7 @@ namespace exe
 
             System.Console.WriteLine();
 
-            valores = ((365 * anos * qtd / 28) * preço);
+            valores = ((365 * anos * qtd / 30) * preço);
             System.Console.Write("R$" + valores + " Gastos com cigarros! \n");
             
         }
